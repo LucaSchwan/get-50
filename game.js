@@ -19,6 +19,7 @@ var resetText = 0;
 var reseted = false;
 var lastTime = 0;
 var pEnabled = true;
+var bigBtn = true;
 
 function init(){
 	game = new Phaser.Game(900, 600, Phaser.CANVAS, '', null, false, false);
@@ -65,8 +66,13 @@ MainGame.prototype = {
 		highscore = localStorage.getItem("highscore");
 		if(highscore == null) highscore = "Kein Highscore vorhanden!";
 		this.text = game.add.text(0, 0, "Points to get:50 \nGot:0 \nHighscore:" + highscore + "\nLast Time:" + lastTime, {font: "20px Arial", fill: "#000000"});
-		this.playBtn = game.add.button(730, -50, "PlayBtn", function(){
+		this.playBtn = game.add.button(800, 30, "PlayBtn", function(){
 			if (pEnabled = true){
+				bigBtn = false;
+				this.playBtn.scale.setTo(4.7, 4.7);
+				setTimeout(function(){
+					bigBtn = true
+				},75)
 				start = false;
 				play = true;
 				seconds = 0;
@@ -76,6 +82,7 @@ MainGame.prototype = {
 			}
 		}, this, 2, 1, 0);
 		this.playBtn.scale.setTo(5, 5);
+		this.playBtn.anchor.setTo(0.5, 0.5);
 		timerText = game.add.text(game.world.centerX, 15, "Time: 0", { font: "20px Arial", fill: "#000000", align: "center" });
 		timerText.anchor.setTo(0.5, 0.5);
 		highscore = localStorage.getItem("highscore");
@@ -83,12 +90,13 @@ MainGame.prototype = {
 		if(lastTime == 0) lastTime = "Not Played!";
 	},
 	update: function(){
+		if (bigBtn == true)this.playBtn.scale.setTo(5, 5);
 		highscore = localStorage.getItem("highscore");
 		if (start == false && end == false) play = true;
-		if (play == true && this.arrow.up.isDown||this.btnW.isDown)this.player.y = this.player.y -4;
-		if (play == true && this.arrow.down.isDown||this.btnS.isDown)this.player.y = this.player.y +4;
-		if (play == true && this.arrow.left.isDown||this.btnA.isDown)this.player.x = this.player.x -4;
-		if (play == true && this.arrow.right.isDown||this.btnD.isDown)this.player.x = this.player.x +4;
+		if (play == true && this.arrow.up.isDown||play == true && this.btnW.isDown)this.player.y = this.player.y -4;
+		if (play == true && this.arrow.down.isDown||play == true && this.btnS.isDown)this.player.y = this.player.y +4;
+		if (play == true && this.arrow.left.isDown||play == true && this.btnA.isDown)this.player.x = this.player.x -4;
+		if (play == true && this.arrow.right.isDown||play == true && this.btnD.isDown)this.player.x = this.player.x +4;
 		if(start == true)score = 50;
 		if(highscore == null) highscore = "No Highscore!";
 		if(lastTime == 0) lastTime = "Not Played!";
