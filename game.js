@@ -34,6 +34,8 @@ var MainGame = function() {
 
 MainGame.prototype = {
 	init: function(){
+		this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+		this.scale.pageAlignVertically = true;
 
 	},
 
