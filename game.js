@@ -34,7 +34,7 @@ var MainGame = function() {
 
 MainGame.prototype = {
 	init: function(){
-		
+		this.game.scale = this.game.scalemanager.NO_SCALE
 	},
 
 	preload: function(){
