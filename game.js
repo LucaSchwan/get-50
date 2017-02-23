@@ -21,7 +21,7 @@ var lastTime = 0;
 var pEnabled = true;
 var bigBtn = true;
 
-function init(){
+function init() {
 	game = new Phaser.Game(900, 600, Phaser.CANVAS, '', null, false, false);
 
 	game.state.add("MainGame", MainGame);
@@ -34,7 +34,7 @@ var MainGame = function() {
 
 MainGame.prototype = {
 	init: function(){
-		this.game.scale = this.game.scalemanager.NO_SCALE
+
 	},
 
 	preload: function(){
