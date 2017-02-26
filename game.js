@@ -41,7 +41,6 @@ MainGame.prototype = {
 		game.load.image("Player", "assets/img/player.png");
 		game.load.image("Point", "assets/img/point.png");
 		game.load.image("PlayBtn", "assets/img/playBtn.png");
-		//game.load.image(1, "assets/img/invisible.png");
 		this.game.stage.backgroundColor = "#FF7F24";
 	},
 
@@ -67,7 +66,7 @@ MainGame.prototype = {
 		if(highscore == null) highscore = "Kein Highscore vorhanden!";
 		this.text = game.add.text(0, 0, "Points to get:50 \nGot:0 \nHighscore:" + highscore + "\nLast Time:" + lastTime, {font: "20px Arial", fill: "#000000"});
 		this.playBtn = game.add.button(800, 30, "PlayBtn", function(){
-			if (pEnabled = true){
+			if (pEnabled == true){
 				bigBtn = false;
 				this.playBtn.scale.setTo(4.7, 4.7);
 				setTimeout(function(){
@@ -171,15 +170,4 @@ MainGame.prototype = {
 function updateCounter(){
 if (play == true)	seconds++;
 else seconds = 0;
-}
-
-function play(){
-	if (pEnabled = true){
-			start = false;
-			play = true;
-			seconds = 0;
-			score = 50;
-			console.log("playBtn"),
-			pEnabled = false;
-		}
 }
