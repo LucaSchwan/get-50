@@ -1,5 +1,5 @@
 # Spiel
-Get50 is a small Phaser based game.
+Get50 is a small Phaser based game. Hosted on Heroku
 
 
 
@@ -7,12 +7,4 @@ To Launch the game use:
 
 
 
-https://rawgit.com/LucaSchwan/Spiel/master/index.html
-
-
-
-If this not works try:
-
-
-
-https://cdn.rawgit.com/LucaSchwan/Spiel/7d7ff1bf/index.html
+https://get50.herokuapp.com/
