@@ -6,4 +6,4 @@ Get50 is a small Phaser based game. It is hosted on Github Pages but the phaser.
 
 <br />
 
-This was one of the first times I coded something. It was what got me hooked on Javascript and Webdevelopment. Even though it was a game.
+This was one of the first times I coded something. It was what got me hooked on Javascript and Webdevelopment. Even though it was a game. The CSS seem to be a bit broken on Github Pages but I'm not going to fix it.
